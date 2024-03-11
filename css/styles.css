@@ -100,9 +100,12 @@ html, body {
 }
 
 .centered-child {
-  background: orange;
+  /*background: orange;*/
   width: 100%;
   height: 100%;
   position: relative;
   padding: 2%;
+  left: 50%;
+  right: 50%;
+  margin: -50px 0 0 -50px;
 }
