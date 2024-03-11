@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/*
 document.addEventListener("DOMContentLoaded", function () {
     // Load common elements dynamically
     var sidebar = document.querySelector(".sidebar");
@@ -32,6 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href='#music' style="background:rgba(237, 64, 245, 0.7)">Music</a>
         <a href='#contacts' style="background:rgba(253, 33, 176, 0.7)">Contacts</a>
     `;
-});
+});*/
 
 
