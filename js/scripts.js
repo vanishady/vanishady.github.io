@@ -8,7 +8,30 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    const sidebarRoot = document.getElementById('sidebar-root');
+    if (sidebarRoot) {
+        fetch('../common/sidebar.html')
+            .then(function(response) { return response.text(); })
+            .then(function(html) {
+                sidebarRoot.innerHTML = html;
+                setupSidebarLinks();
+            });
+        return;
+    }
+
+    setupSidebarLinks();
+});
+
+function setupSidebarLinks() {
     const links = document.querySelectorAll('.sidebar a');
+    const currentPath = window.location.pathname.toLowerCase();
+
+    links.forEach(function(link) {
+        const linkPath = new URL(link.getAttribute('href'), window.location.href).pathname.toLowerCase();
+        if (currentPath === linkPath) {
+            link.classList.add('active');
+        }
+    });
     
     links.forEach(function(link) {
         link.addEventListener('click', function() {
@@ -21,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
-});
+}
+
+
 
 
 
