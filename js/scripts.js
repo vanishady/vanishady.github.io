@@ -22,6 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
     setupSidebarLinks();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.container-parent.bio-page');
+    if (container) {
+        container.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            container.scrollLeft += e.deltaY;
+        }, { passive: false });
+    }
+});
+
 function setupSidebarLinks() {
     const links = document.querySelectorAll('.sidebar a');
     const currentPath = window.location.pathname.toLowerCase();
