@@ -8,6 +8,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
+    //applyPageTheme();
     const sidebarRoot = document.getElementById('sidebar-root');
     if (sidebarRoot) {
         fetch('../common/sidebar.html')
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(html) {
                 sidebarRoot.innerHTML = html;
                 setupSidebarLinks();
+                //applyPageTheme();
             });
         return;
     }
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.container-parent.bio-page');
+    const container = document.querySelector('.container-parent.scrollable-page');
     if (container) {
         container.addEventListener('wheel', function(e) {
             e.preventDefault();
@@ -31,6 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: false });
     }
 });
+
+//function applyPageTheme() {
+//    const path = window.location.pathname.toLowerCase();
+//    if (!path.endsWith('music.html')) return;
+//
+//    document.querySelectorAll('.blurred-text').forEach(function(el) {
+//        el.style.filter = 'hue-rotate(150deg)';
+//    });
+//
+//    const sidebar = document.querySelector('.sidebar');
+//    if (sidebar) sidebar.style.filter = 'hue-rotate(150deg)';
+//}
 
 function setupSidebarLinks() {
     const links = document.querySelectorAll('.sidebar a');

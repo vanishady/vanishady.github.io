@@ -137,17 +137,71 @@ p {
     0 0 80px rgba(150, 30, 255, 0.4);
 }
 
+.blurred-text.blurrer, .blurred-text .blurrer {
+  animation: blurAnimation 2s infinite alternate;
+}
+
+@keyframes blurAnimation {
+  from {
+    text-shadow: 
+      0 0 10px rgba(237, 64, 245, 0.7),
+      0 0 20px rgba(200, 100, 255, 0.8),
+      0 0 40px rgba(180, 60, 255, 0.6),
+      0 0 80px rgba(150, 30, 255, 0.4);
+  }
+  to {
+    text-shadow: 
+      0 0 100px rgba(222, 210, 222, 0.8),
+      0 0 120px rgba(237, 64, 245, 1),
+      0 0 200px rgba(200, 100, 255, 1),
+      0 0 220px rgba(180, 60, 255, 0.9),
+      0 0 120px rgba(150, 30, 255, 0.8),
+      0 0 200px rgba(237, 64, 245, 0.5);
+  }
+}
+
+/********************************
+*
+* Scrollable page
+*
+*********************************/
+
+.scroll-wrapper {
+  position: relative;
+  width: max-content;
+  height: 100%;
+}
+
+.container-parent.scrollable-page {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 45, 186, 0.25) transparent;
+}
+
+.container-parent.scrollable-page::-webkit-scrollbar {
+  display: block;
+  height: 3px;
+}
+
+.container-parent.scrollable-page::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container-parent.scrollable-page::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 2px;
+}
+
+.container-parent.scrollable-page::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 /********************************
 *
 * Bio page grid
 *
 *********************************/
-
-.bio-scroll-wrapper {
-  position: relative;
-  width: max-content;
-  height: 100%;
-}
 
 .bio-gif {
   position: absolute;
@@ -175,29 +229,37 @@ p {
   padding: 24px;
 }
 
-/* Bio page: elegant horizontal scrollbar, no vertical */
-.container-parent.bio-page {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(184, 45, 186, 0.25) transparent;
+/********************************
+*
+* Music Page
+*
+*********************************/
+
+ul a {
+  color: white;
+  text-decoration: none;
 }
 
-.container-parent.bio-page::-webkit-scrollbar {
-  display: block;
-  height: 3px;
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(6, calc((100vw - 210px) / 2.5));
+  grid-template-rows: repeat(2, calc(50% - 24px));
+  gap: 16px;
+  padding: 16px;
+  width: max-content;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.container-parent.bio-page::-webkit-scrollbar-track {
-  background: transparent;
+.music-cell {
+  border: 5px solid rgba(255, 26, 26, 0.15);
+  border-radius: 8px;
+  padding: 24px;
 }
 
-.container-parent.bio-page::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 2px;
+.music-cell:empty {
+    pointer-events: none;
+    border-color: transparent;
 }
 
-.container-parent.bio-page::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
 
