@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
     <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
@@ -23,16 +25,67 @@
     <div id="sidebar-root"></div>
     
 
-    <div class="container-parent">
-        <div class="centered-child">
-            <h1>About my coding projects</h1>
-            <h2>(i guess)</h2>
-            <ul>
-                <li>Github repo</li>
-                <li>The Raven websites</li>
-            </ul>
+    <div class="container-parent scrollable-page">
+        <div class="scroll-wrapper">
+        <div class="coding-grid">
+            <!-- first row -->
+            <div class="coding-cell">
+                <h1 class="blurred-text animate__animated animate__headShake">About my coding projects and all</h1>
+                <p class="blurred-text">You can see how much I love coding based on this lovely website. Can't you?</p>
+            </div>
+            <div class="coding-cell" style="background-color: rgba(238, 20, 144, 0.5);">
+                <h2 class="blurred-text">VR experience</h2>
+                <p class="blurred-text">Immersive experience in Unity 3D, tailored for Oculus Quest though OpenXR standard. Audio engine is provided by SuperCollider, communicating to Unity via OSC protocol. A Python RNN automates changes in audio parameters and fx. </p>
+                <div class="coding-link-list">
+                    <a class="coding-link" style="background-color: rgba(212, 22, 130, 0.8);" href="https://github.com/vanishady/unity-vr" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> Unity VR
+                    </a>
+                </div>
+            </div>
+            <div class="coding-cell" style="background-color: rgba(202, 57, 235, 0.555);">
+                <h2 class="blurred-text">RingO Modulator</h2>
+                <p class="blurred-text">Granular synthesiser, with reverb and ring modulator fx. Controllable by means of GUI + 4 hardware elements: a keyboard to set the grain pitch, a mouthpiece for sound intensity, a knob for randomness of grain position and a button to switch trigger type. </p>
+                <div class="coding-link-list">
+                    <a class="coding-link" style="background-color: rgb(151, 45, 175);" href="https://github.com/vanishady/unity-vr" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> Unity VR
+                    </a>
+                </div> 
+            </div>
+            <div class="coding-cell coding-cell--link">
+                <h1 class="blurred-text">Honorable mention to: TheRaven</h1>
+                <p class="blurred-text">TheRaven is a society I co-founded with my mate @Marta. I know, the tag won't work, but she ain't got GitHub, as she's in the marketing part of the project. We craft solutions (Ik that sounds AI of me) for those ho seek digital visibility</p>
+                <a class="stretched-link" href="https://www.theraveninformatics.com/" target="_blank" rel="noopener noreferrer">
+                </a>
+            </div>
+
+            <!-- second row -->
+            <div class="coding-cell">
+                <p class="blurred-text">Well, since we are on Github, you could easily find my coding projecs there. Mostly. But ok let's be redundant.</p>
+            </div>
+            <div class="coding-cell" style="background-color: rgba(82, 64, 215, 0.555); margin-bottom: 40px;" >
+                <h2 class="blurred-text">Crazy Taxi!</h2>
+                <p class="blurred-text">Graphic engine from scratch using Vulkan. The project is inspired by Crazy Taxi and GTA.</p>
+                <div class="coding-link-list">
+                    <a class="coding-link" style="background-color: rgb(82, 64, 215);" href="https://github.com/alicelenoci/Computer_Graphics" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> Hey, Taxi!
+                        <i class="fa-brands fa-github icon--giant"></i>
+                        <i class="fa-brands fa-github icon--giant" style="top: 250%; right: -50%;"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="coding-cell" style="background-color: rgba(40, 17, 215, 0.555); margin-bottom: 40px;">
+                <h2 class="blurred-text">PitchShifter</h2>
+                <p class="blurred-text">Harmonizer with delay-based pitch shifting (VST plugin, standalone). It was fun ... had a hard time going though JUCE, but lots of fun.</p>
+                <div class="coding-link-list">
+                    <a class="coding-link" style="background-color: blue" href="https://github.com/vanishady/PitchShifter" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i> F@*ks with the Fabric of Time
+                    </a>
+                </div>
+            </div>
+            <div class="coding-cell"></div>
         </div>
-    </div>
+
+        </div>
 
 </body>
 </html>
